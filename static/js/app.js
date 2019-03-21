@@ -13,6 +13,21 @@ function buildMetadata(sample) {
 
     // BONUS: Build the Gauge Chart
     // buildGauge(data.WFREQ);
+
+	var cell = d3.select("#sample-metadata");
+	let url = `/metadata/${sample}`;
+//Clearing the html under the cell.
+	cell.html('');
+
+//Iterate the Json and post the value	
+d3.json(url).then((item) => {
+     Object.entries(item).forEach(([key, value]) => {
+       cell.append('text').html(`${key}: ${value}<br>`);
+	   
+     });
+	 
+});
+
 }
 
 function buildCharts(sample) {
