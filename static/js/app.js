@@ -46,7 +46,7 @@ function buildCharts(sample) {
 
     d3.json(url).then(function(data){
       var layout = {
-        title: "'Bar' Chart",
+        title: " ",
         width:500,
         height:500
 				};
